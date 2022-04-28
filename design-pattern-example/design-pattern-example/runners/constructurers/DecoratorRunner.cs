@@ -1,4 +1,5 @@
-﻿using design_pattern_example.entities;
+﻿using design_pattern_example.common;
+using design_pattern_example.entities;
 using design_pattern_example.patterns.constructures;
 using design_pattern_example.patterns.constructures.Decorators;
 using design_pattern_example.services;
@@ -8,6 +9,7 @@ using System.Text;
 
 namespace design_pattern_example.runners.creators
 {
+    [RunnerRegister(PatternEnum.Decorator)]
     public class DecoratorRunner : IRunner
     {
         public void Run()

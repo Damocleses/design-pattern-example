@@ -1,12 +1,14 @@
-﻿using design_pattern_example.patterns.constructures;
+﻿using design_pattern_example.common;
+using design_pattern_example.patterns.constructures;
 using design_pattern_example.services;
 using System;
 
 namespace design_pattern_example.runners.constructure
 {
-    public class AdapterRunner : AbstractRunner,IRunner
+    [RunnerRegister(PatternEnum.Adapter)]
+    public class AdapterRunner : IRunner
     {
-        public new void Run()
+        public void Run()
         {
             var americanElectric = new AmericanElectrictService();
             var electric = americanElectric.Get110VElectric();

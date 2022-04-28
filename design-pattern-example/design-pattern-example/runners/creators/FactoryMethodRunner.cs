@@ -8,6 +8,7 @@ using System.Text;
 
 namespace design_pattern_example.runners.creators
 {
+    [RunnerRegister(PatternEnum.Factory_Method)]
     public class FactoryMethodRunner : IRunner
     {
         public void Run()

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace design_pattern_example.runners.creators
 {
+    [RunnerRegister(PatternEnum.Singleton)]
     public class SingletonRunner : IRunner
     {
         public void Run()

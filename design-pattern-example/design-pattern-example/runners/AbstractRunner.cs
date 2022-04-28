@@ -4,15 +4,8 @@ using System.Text;
 
 namespace design_pattern_example.runners
 {
-    public class AbstractRunner : IRunner
+    public class AbstractRunner
     {
-        public AbstractRunner()
-        {
-            RunnerContext.RegisterRunner(this.GetType().Name, this);
-        }
 
-        public void Run()
-        {
-        }
     }
 }

@@ -12,6 +12,7 @@ namespace design_pattern_example
     {
         static void Main(string[] args)
         {
+            RunnerContext.RegisterAllRunners("design-pattern-example");
             var dic = StaticMethod.GetPropertyValueDic(typeof(PatternEnum));
             while (true)
             {
@@ -24,62 +25,11 @@ namespace design_pattern_example
                 var pattern = 0;
                 Int32.TryParse(patternStr, out pattern);
                 //var prototype = PatternFactory.CreateRunner((PatternEnum)pattern);
-                var prototype = RunnerContext.GetRunner();
+                var prototype = RunnerContext.GetRunner((PatternEnum)pattern);
                 Console.WriteLine("------------------------------------");
                 prototype.Run();
                 Console.WriteLine("------------------------------------");
             }
         }
-    }
-
-    public abstract class AsbstractPhone
-    {
-        public virtual void Call()
-        {
-
-        }
-    }
-
-    public class IPhone : AsbstractPhone
-    {
-        private int Field { get; set; }
-        public string UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserNameWithID
-        {
-            get
-            {
-                return $"{UserName}({UserID})";
-            }
-        }
-
-        private int TruePercent;
-        public int Percent
-        {
-            get
-            {
-                return TruePercent * 100;
-            }
-            set
-            {
-                this.TruePercent = value / 100;
-            }
-        }
-        public override void Call()
-        {
-            base.Call();
-        }
-
-        public string Call(string number)
-        {
-
-            return string.Empty;
-        }
-
-        public int Call(string number)
-        {
-            return 0;
-        }
-
     }
 }

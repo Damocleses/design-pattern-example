@@ -1,10 +1,12 @@
-﻿using design_pattern_example.patterns.creators;
+﻿using design_pattern_example.common;
+using design_pattern_example.patterns.creators;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace design_pattern_example.runners.creators
 {
+    [RunnerRegister(PatternEnum.Abstract_Factory)]
     public class AbstractFactoryRunner : IRunner
     {
         public void Run()
